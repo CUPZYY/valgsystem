@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,15 +9,32 @@
     <link href="../static/style.css" rel="stylesheet">
 
 </head>
+
 <body>
-    <div class="Header"><h1>Valgkamp</h1></div>
-    <div class="Content">
-        {% for klasse in kandidater %}
-        <h2>{{ klasse }}</h2>
-        {% for kandidat in kandidater[klasse] %}
-            <button>{{ kandidat }}</button>
-        {% endfor %}
-    {% endfor %}
+    <div class="Header">
+        <h1>Valgkamp</h1>
     </div>
+
+    <div class="Content">
+        <div class="Klasse">
+                 {% for klasse in kandidater %}
+        <h2>{{ klasse }}</h2>
+        </div>
+   
+
+
+        <div class="Kandidat">
+            {% for kandidat in kandidater[klasse] %}
+            <button>{{ kandidat }}</button>
+            {% endfor %}
+            {% endfor %}
+        </div>
+
+
+    </div>
+
+
+
 </body>
+
 </html>
