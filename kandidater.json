@@ -1,12 +1,6 @@
 {
-  "Vara": {
-    "IMIT": ["Arman Ameri"]
-  },
-  "Leder": {
-    "IMIT": ["Eline Aspenes", "Storm Jin Rye Davidsen"],
-    "IMMP": ["Jens Løining", "Madhavan Swaminathan"],
-    "IMSTMP": ["Elisabeth Pihl", "Alexander Slettum"],
-    "IMSTIT": ["Daniel Johan Sørby", "Johan Album Arntzen"]
-  }
+  "IMIT": ["Eline Aspenes", "Arman Ameri", "Storm Jin Rye Davidsen"],
+  "IMMP": ["Jens Løining", "Madhavan Swaminathan"],
+  "IMSTMP": ["Elisabeth Pihl", "Alexander Slettum"],
+  "IMSTIT": ["Daniel johan sørby", "Johan Album Arntzen"]
 }
-
