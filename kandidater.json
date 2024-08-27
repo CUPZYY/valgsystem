@@ -1,7 +1,12 @@
 {
-  "IMIT": ["eline", "arman", "storm"],
-  "IMMP": ["jenst", "madhavan"],
-  "IMSTMP": ["elisabeth", "alexander"],
-  "IMSTIT": ["daniel", "johanA"]
+  "Vara": {
+    "IMIT": ["Arman Ameri"]
+  },
+  "Leder": {
+    "IMIT": ["Eline Aspenes", "Storm Jin Rye Davidsen"],
+    "IMMP": ["Jens Løining", "Madhavan Swaminathan"],
+    "IMSTMP": ["Elisabeth Pihl", "Alexander Slettum"],
+    "IMSTIT": ["Daniel Johan Sørby", "Johan Album Arntzen"]
+  }
 }
 
