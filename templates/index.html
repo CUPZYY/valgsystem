@@ -8,6 +8,11 @@
     <link href="../static/style.css" rel="stylesheet">
 </head>
 <body>
-    
+    {% for klasse in kandidater %}
+        <h2>{{ klasse }}</h2>
+        {% for kandidat in kandidater[klasse] %}
+            <button>{{ kandidat }}</button>
+        {% endfor %}
+    {% endfor %}
 </body>
 </html>
