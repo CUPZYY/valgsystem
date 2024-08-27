@@ -1,6 +1,6 @@
 {
-  "IMIT": {"Eline Aspenes": {}, "Arman Ameri": {}, "Storm Jin Rye Davidsen": {}},
-  "IMMP": {"Jens Løining": {}, "Madhavan Swaminathan": {}},
-  "IMSTMP": {"Elisabeth Pihl": {}, "Alexander Slettum": {}},
-  "IMSTIT": {"Daniel johan sørby": {}, "Johan Album Arntzen": {}}
+  "IMIT": { "0": {"name": "Eline Aspenes"}, "1": {"name": "Arman Ameri"}, "2": {"name": "Storm Jin Rye Davidsen"}},
+  "IMMP": {"0": { "name": "Jens Løining"}, "1": {"name": "Madhavan Swaminathan"}},
+  "IMSTMP": {"0": {"name": "Elisabeth Pihl"}, "1": {"name": "Alexander Slettum"}},
+  "IMSTIT": {"0": {"name": "Daniel johan sørby"}, "1": {"name": "Johan Album Arntzen"}}
 }

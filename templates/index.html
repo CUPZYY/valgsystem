@@ -16,21 +16,17 @@
     </div>
 
     <div class="Content">
-        <div class="Klasse">
-                 {% for klasse in kandidater %}
-        <h2>{{ klasse }}</h2>
-        </div>
-   
-
-
-        <div class="Kandidat">
+        {% for klasse in kandidater %}
+           <div class="Klasse">
+                <h2>{{ klasse }}</h2>
+           
             {% for kandidat in kandidater[klasse] %}
-            <button>{{ kandidat }}</button>
+                <div class="Kandidat">
+                    <button>{{ kandidat }}</button>
+                </div>
             {% endfor %}
-            {% endfor %}
-        </div>
-
-
+            </div>
+        {% endfor %}
     </div>
 
 
