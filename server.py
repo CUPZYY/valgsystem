@@ -19,7 +19,7 @@ def submit_vote(klasse, candidate):
 def index():
     return render_template('index.html')
 
-@app.route("/candidates")
+@app.route("/kandidater")
 def show_candidates():
     klasse = request.args.get('klasse')
     if klasse in kandidater:
