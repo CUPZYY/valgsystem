@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
     <link href="../static/style.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -16,21 +14,17 @@
     </div>
 
     <div class="Content">
-        {% for klasse in kandidater %}
-           <div class="Klasse">
-                <h2>{{ klasse }}</h2>
-           
-            {% for kandidat in kandidater[klasse] %}
-                <div class="Kandidat">
-                    <button>{{ kandidat }}</button>
-                </div>
-            {% endfor %}
-            </div>
-        {% endfor %}
+        <form action="/kandidater" method="get">
+            <label for="klasse">Choose your class:</label>
+            <select name="klasse" id="klasse">
+                <option value="IMIT">IMIT</option>
+                <option value="IMMP">IMMP</option>
+                <option value="IMSTIT">IMSTIT</option>
+                <option value="IMSTMP">IMSTMP</option>
+            </select>
+            <button type="submit">Submit</button>
+        </form>
     </div>
-
-
-
 </body>
 
 </html>

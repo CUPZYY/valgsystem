@@ -17,7 +17,15 @@ def submit_vote(klasse, candidate):
 
 @app.route("/")
 def index():
-    return render_template('index.html', kandidater=kandidater)
+    return render_template('index.html')
+
+@app.route("/candidates")
+def show_candidates():
+    klasse = request.args.get('klasse')
+    if klasse in kandidater:
+        return render_template('kandidater.html', kandidater=kandidater[klasse].values(), klasse=klasse)
+    else:
+        return render_template('kandidater.html', kandidater=[], klasse=klasse)
 
 @app.route("/api/vote/")
 def vote():
@@ -41,7 +49,6 @@ def vote():
         json.dump(ids, f, ensure_ascii=False, indent=4)
 
     return "jess"
-
 
 if __name__ == '__main__':
     app.run()

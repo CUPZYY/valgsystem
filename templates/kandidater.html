@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../static/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="Header">
+        <h1>Valgkamp</h1>
+    </div>
+
+    <div class="Content">
+        {% if kandidater %}
+            <h2>{{ klasse }}</h2>
+            {% for kandidat in kandidater %}
+                <div class="Kandidat">
+                    <button>{{ kandidat.name }}</button>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>Ingen valg kandidater her.</p>
+        {% endif %}
+    </div>
+</body>
+
+</html>
