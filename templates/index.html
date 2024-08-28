@@ -22,7 +22,7 @@
            
             {% for kandidat in kandidater[klasse] %}
                 <div class="Kandidat">
-                    <button>{{ kandidat }}</button>
+                    <button>{{ kandidater[klasse][kandidat]["name"] }}</button>
                 </div>
             {% endfor %}
             </div>
