@@ -12,7 +12,7 @@ function send_vote(id, candidate) {
         if (xhr.readyState == 4 && xhr.status == 200) {
             location.href = "/vote/success"
         } else {
-            null
+            location.href = "/vote/error"
         }
     }
     xhr.send(body)

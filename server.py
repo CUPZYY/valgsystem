@@ -37,6 +37,10 @@ def index():
 def vote_success():
     return render_template('responses/vote_success.html')
 
+@app.route("/vote/error")
+def vote_error():
+    return render_template('responses/vote_error.html')
+
 @app.route("/vote")
 def show_candidates():
     id = request.args.get("id")
@@ -48,17 +52,20 @@ def show_candidates():
 
 @app.route("/api/vote/", methods=["POST"])
 def vote():
-    args = request.json
-    id = args.get("id")
-    candidate = args.get("candidate")
-    klasse = find_klasse(id, remove=True)
-    if not klasse:
-        return Response("{}", status=400)
-    
-    if candidate:
-        submit_vote(klasse, candidate)
+    try:
+        args = request.json
+        id = args.get("id")
+        candidate = args.get("candidate")
+        klasse = find_klasse(id, remove=True)
+        if not klasse:
+            return Response("{}", status=400)
+        
+        if candidate:
+            submit_vote(klasse, candidate)
 
-    return Response("{}", status=200)
+        return Response("{}", status=200)
+    except:
+        return Response("{}", status=400)
 
 if __name__ == '__main__':
     app.run()
