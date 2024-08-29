@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response
 import json
 
 app = Flask(__name__)
@@ -33,6 +33,10 @@ def find_klasse(id, remove=False):
 def index():
     return render_template('index.html')
 
+@app.route("/vote/success")
+def vote_success():
+    return render_template('responses/vote_success.html')
+
 @app.route("/vote")
 def show_candidates():
     id = request.args.get("id")
@@ -45,17 +49,16 @@ def show_candidates():
 @app.route("/api/vote/", methods=["POST"])
 def vote():
     args = request.json
-    print(args)
     id = args.get("id")
     candidate = args.get("candidate")
     klasse = find_klasse(id, remove=True)
     if not klasse:
-        return "error"
+        return Response("{}", status=400)
     
     if candidate:
         submit_vote(klasse, candidate)
 
-    return "jess"
+    return Response("{}", status=200)
 
 if __name__ == '__main__':
     app.run()

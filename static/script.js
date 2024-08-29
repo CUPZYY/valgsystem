@@ -8,12 +8,12 @@ function send_vote(id, candidate) {
         id: id,
         candidate: candidate
     })
-    xhr.onload = () => {
-/*         if (xhr.readyState == 4 && xhr.status == 201) {
-            pass
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            location.href = "/vote/success"
         } else {
-            pass
-        } */
+            null
+        }
     }
     xhr.send(body)
 }
