@@ -1,19 +1,28 @@
 {
     "IMIT": {
+        "_comment_navn0": "Eline Aspenes",
         "0": 0,
+        "_comment_navn1": "Arman Ameri",
         "1": 0,
+        "_comment_navn2": "Storm Jin Rye Davidsen",
         "2": 0
     },
     "IMMP": {
+        "_comment_navn0": "Jens Løining",
         "0": 0,
+        "_comment_navn1": "Madhavan Swaminathan",
         "1": 0
     },
     "IMSTMP": {
+        "_comment_navn0": "Elisabeth Pihl",
         "0": 0,
+        "_comment_navn1": "Alexander Slettum",
         "1": 0
     },
     "IMSTIT": {
+        "_comment_navn0": "Daniel Johan Sørby",
         "0": 0,
+        "_comment_navn1": "Johan Album Arntzen",
         "1": 0
     }
 }
