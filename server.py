@@ -10,7 +10,7 @@ with open("kandidater.json", "r") as f:
 def submit_vote(klasse, candidate):
     with open('stemmer.json', 'r+', encoding='utf-8') as f:
         stemmer = json.load(f)
-        stemmer[klasse][str(candidate)] =+ 1
+        stemmer[klasse][str(candidate)] += 1
         f.seek(0)
         f.truncate()
         json.dump(stemmer, f, ensure_ascii=False, indent=4)
@@ -24,6 +24,8 @@ def find_klasse(id, remove=False):
                 klasse = klassenavn
                 if remove:
                     ids[klasse].remove(id)
+                    f.seek(0)
+                    f.truncate()
                     json.dump(ids, f, ensure_ascii=False, indent=4)
     return klasse
 
@@ -38,11 +40,12 @@ def show_candidates():
     if not klasse:
         return render_template('invalid.html')
     else:
-        return render_template('kandidater.html', kandidater=[], klasse=klasse)
+        return render_template('kandidater.html', kandidater=kandidater[klasse], klasse=klasse, id=id)
 
-@app.route("/api/vote/")
+@app.route("/api/vote/", methods=["POST"])
 def vote():
-    args = dict(request.args)
+    args = request.json
+    print(args)
     id = args.get("id")
     candidate = args.get("candidate")
     klasse = find_klasse(id, remove=True)

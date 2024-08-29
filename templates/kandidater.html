@@ -1,30 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="../static/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
 </head>
 
 <body>
-    <div class="Header">
-        <h1>Valgkamp</h1>
+    <div class="block section">
+        <a href=".">
+            <h1 class="title is-1 has-text-centered">Elevrådsvalg 2024</h1>
+        </a>
     </div>
-
-    <div class="Content">
-        {% if kandidater %}
-            <h2>{{ klasse }}</h2>
-            {% for kandidat in kandidater %}
-                <div class="Kandidat">
-                    <button>{{ kandidat.name }}</button>
-                </div>
-            {% endfor %}
-        {% else %}
-            <p>Ingen valg kandidater her.</p>
-        {% endif %}
-    </div>
+    <section class="section is-medium">
+        <div class="container is-fluid has-text-centered">
+            <h3 class="title is-3 block">Her er dine valgmuligheter for klasse {{ klasse }}!</h3>
+            <div id="valgBtns" class="field is-grouped is-grouped-centered buttons">
+                {% for kandidat in kandidater %}
+                    <button class="button" id="{{ kandidat }}" onclick="selection(this, exclusive=true)">{{ kandidater[kandidat]["name"] }}</button>
+                {% endfor %}
+            </div>
+            <button class="button is-link mt-4 is-centered" onclick="vote_event('{{ id }}')">
+                Avgi stemme
+            </button>
+        </div>
+    </section>
 </body>
-
+<script src="../static/script.js"></script>
 </html>
