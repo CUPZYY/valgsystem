@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request, Response
 import json
 
+DEV = True
+
 app = Flask(__name__)
-app.config['TEMPLATES_AUTO_RELOAD'] = True
 
 with open("kandidater.json", "r") as f:
     kandidater = json.load(f)
@@ -68,4 +69,9 @@ def vote():
         return Response("{}", status=400)
 
 if __name__ == '__main__':
-    app.run()
+    if DEV:
+        app.config['TEMPLATES_AUTO_RELOAD'] = True
+        app.run()
+    else:
+        import waitress
+        waitress.serve(app, host="0.0.0.0", port="80")
