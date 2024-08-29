@@ -1,32 +1,15 @@
-<!DOCTYPE html>
-<html lang="en" class="theme-dark">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-</head>
-
-<body>
-    <div class="block section">
-        <a href=".">
-            <h1 class="title is-1 has-text-centered">Elevrådsvalg 2024</h1>
-        </a>
-    </div>
-    <section class="section is-medium">
-        <div class="container is-fluid has-text-centered">
-            <h3 class="title is-3 block">Her er dine valgmuligheter for klasse {{ klasse }}!</h3>
-            <div id="valgBtns" class="field is-grouped is-grouped-centered buttons">
-                {% for kandidat in kandidater %}
-                    <button class="button" id="{{ kandidat }}" onclick="selection(this, exclusive=true)">{{ kandidater[kandidat]["name"] }}</button>
-                {% endfor %}
-            </div>
-            <button class="button is-link mt-4 is-centered" onclick="vote_event('{{ id }}')">
-                Avgi stemme
-            </button>
+{% block content %}
+    <div class="container is-fluid has-text-centered">
+        <h3 class="title is-3 block">Her er dine valgmuligheter for klasse {{ klasse }}!</h3>
+        <div id="valgBtns" class="field is-grouped is-grouped-centered buttons">
+            {% for kandidat in kandidater %}
+                <button class="button" id="{{ kandidat }}" onclick="selection(this, exclusive=true)">{{ kandidater[kandidat]["name"] }}</button>
+            {% endfor %}
         </div>
-    </section>
-</body>
-<script src="../static/script.js"></script>
-</html>
+        <button class="button is-link mt-4 is-centered" onclick="vote_event('{{ id }}')">
+            Avgi stemme
+        </button>
+    </div>
+{% endblock %}

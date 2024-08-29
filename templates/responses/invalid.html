@@ -1,27 +1,9 @@
-<!DOCTYPE html>
-<html lang="en" class="theme-dark">
+{% extends "base.html" %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="../static/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
-</head>
-
-<body>
-    <div class="block section">
-        <a href=".">
-            <h1 class="title is-1 has-text-centered">Elevrådsvalg 2024</h1>
-        </a>
+{% block content %}
+    <div class="container block">
+        <h5 class="title is-5 has-text-centered">
+            Koden du har oppgitt er ikke gyldig.
+        </h5>
     </div>
-    <section class="section is-medium">
-        <div class="container block">
-            <h5 class="title is-5 has-text-centered">
-                Koden du har oppgitt er ikke gyldig.
-            </h5>
-        </div>
-    </section>
-</body>
-
-</html>
+{% endblock %}
