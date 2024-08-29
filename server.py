@@ -40,7 +40,7 @@ def show_candidates():
     if not klasse:
         return render_template('invalid.html')
     else:
-        return render_template('kandidater.html', kandidater=kandidater[klasse], klasse=klasse, id=id)
+        return render_template('vote.html', kandidater=kandidater[klasse], klasse=klasse, id=id)
 
 @app.route("/api/vote/", methods=["POST"])
 def vote():
