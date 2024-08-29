@@ -4,8 +4,8 @@ import json
 app = Flask(__name__)
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
-kandidater = json.load(open("kandidater.json", "r"))
-print(kandidater)
+with open("kandidater.json", "r") as f:
+    kandidater = json.load(f)
 
 def submit_vote(klasse, candidate):
     with open('stemmer.json', 'r+', encoding='utf-8') as f:
