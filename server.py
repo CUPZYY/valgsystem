@@ -38,7 +38,7 @@ def show_candidates():
     id = request.args.get("id")
     klasse = find_klasse(id)
     if not klasse:
-        return render_template('invalid.html')
+        return render_template('responses/invalid.html')
     else:
         return render_template('vote.html', kandidater=kandidater[klasse], klasse=klasse, id=id)
 
