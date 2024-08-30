@@ -11,7 +11,10 @@ with open("kandidater.json", "r") as f:
 def submit_vote(klasse, candidate):
     with open('stemmer.json', 'r+', encoding='utf-8') as f:
         stemmer = json.load(f)
-        stemmer[klasse][str(candidate)] += 1
+        if candidate:
+            stemmer[klasse][str(candidate)] += 1
+        else:
+            stemmer[klasse]["blank"] += 1
         f.seek(0)
         f.truncate()
         json.dump(stemmer, f, ensure_ascii=False, indent=4)
@@ -61,8 +64,7 @@ def vote():
         if not klasse:
             return Response("{}", status=400)
         
-        if candidate:
-            submit_vote(klasse, candidate)
+        submit_vote(klasse, candidate)
 
         return Response("{}", status=200)
     except Exception as e:
