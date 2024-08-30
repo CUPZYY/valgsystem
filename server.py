@@ -65,7 +65,8 @@ def vote():
             submit_vote(klasse, candidate)
 
         return Response("{}", status=200)
-    except:
+    except Exception as e:
+        print(e)
         return Response("{}", status=400)
 
 if __name__ == '__main__':
