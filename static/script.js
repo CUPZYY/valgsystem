@@ -25,7 +25,11 @@ function selection(elem, exclusive, className="is-info") {
     elem.classList.add(className)
 }
 
-function vote_event(id, className="is-info") {
-    candidate = buttons.getElementsByClassName(className)[0]?.id
+function vote_event(id, blank=false, className="is-info") {
+    if (blank) {
+        candidate = null;
+    } else {
+        candidate = buttons.getElementsByClassName(className)[0]?.id
+    }
     send_vote(id, candidate)
 }

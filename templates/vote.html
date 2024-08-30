@@ -8,8 +8,13 @@
                 <button class="button" id="{{ kandidat }}" onclick="selection(this, exclusive=true)">{{ kandidater[kandidat]["name"] }}</button>
             {% endfor %}
         </div>
-        <button class="button is-link mt-4 is-centered" onclick="vote_event('{{ id }}')">
-            Avgi stemme
-        </button>
+        <div class="field is-grouped is-grouped-centered mt-4 buttons is-flex">
+            <button class="button is-link is-align-self-center is-flex" onclick="vote_event('{{ id }}')">
+                Avgi stemme
+            </button>
+            <button class="button is-danger" onclick="vote_event('{{ id }}', blank=true)">
+                Stem blankt
+            </button>
+        </div>
     </div>
 {% endblock %}
